@@ -1,0 +1,9 @@
+{% extends 'default.html' %}
+{% load filter %}
+
+{% block title %}
+<h1>{{ new.title|censor }}</h1>
+<i>{{ new.date_pub|date:"d.m.Y" }}</i>
+<p><i>{{ new.date_pub|date:"H:i:s" }}</i></p>
+<p>{{ new.text|censor }}</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% load filter %}
+</head>
+<body>
+{% for n in news %}
+<p><i><b>{{ n.title|censor }}</b></i> {{ n.date_pub|date:"d.m.Y" }}</p>
+<p>{{ n.date_pub|date:"H:i:s" }}</p>
+<p>{{ n.text|truncatechars:20|censor }}</p>
+<a href = "{{ n.get_absolute_url }}">News url</a>
+{% endfor %}
+{% block title %}
+{% endblock %}
+</body>
+</html>
